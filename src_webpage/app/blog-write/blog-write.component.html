@@ -1,0 +1,139 @@
+
+<!-- <app-tool-bar></app-tool-bar>
+   <div fxLayout="column" fxLayoutAlign="center end">
+  <mat-card style="height: 841px;">
+  <div>
+    <mat-card-title>Blog</mat-card-title>
+    <mat-card-subtitle>Write something and post</mat-card-subtitle>
+    <form fxLayout="column" fxLayoutAlign="center center"  #BlogForm="ngForm">
+      <mat-form-field appearance="outline" style="width: 600px">
+        <mat-label>Title</mat-label>
+        <input matInput placeholder="title" required name="btitle" [(ngModel)]="blog.title"
+        #btitle ="ngModel"
+        />
+
+        <mat-error *ngIf="btitle.errors?.['required']">
+          Name required*
+        </mat-error>
+      </mat-form-field>
+      <div>
+        <mat-form-field appearance="fill" style="width: 600px">
+          <mat-label style="background-color: pink;">Blog Content</mat-label>
+
+          <textarea
+            matInput
+            style="height: 500px"
+            required
+            name="bcontent"
+            [(ngModel)]="blog.content"
+            #bcontent = "ngModel"
+          ></textarea>
+          <mat-error *ngIf="bcontent.errors?.['required']">
+            Name required*
+          </mat-error>
+        </mat-form-field>
+      </div>
+      <div>
+        <mat-form-field appearance="outline" style="width: 600px">
+          <mat-label>Name of Author</mat-label>
+          <input matInput placeholder="title" required name="bauthorname" [(ngModel)]="blog.authorname"
+          #bauthor = "ngModel"
+          />
+          <mat-error *ngIf="bauthor.errors?.['required']">
+            Name required*
+          </mat-error>
+        </mat-form-field>
+      </div>
+      <div>
+        <button
+          mat-raised-button
+          color="accent"
+          style="width: 600px"
+          (click)="storeBlogData(BlogForm.value)"
+          [disabled]="BlogForm.invalid"
+        >
+          Post
+        </button>
+      </div>
+    </form>
+  </div>
+</mat-card>
+
+</div> -->
+<!-- <div>&nbsp;</div> -->
+<!-- <div fxLayout="column" fxLayoutAlign="center center" style=" margin-top: 120px;">
+  <button mat-raised-button (click)="gotoBlogEvent()" color="warn">to Write</button>
+
+<div>&nbsp;</div>
+<div fxLayout="row" fxLayoutGap="16px" fxLayoutAlign="center space-between">
+  <div fxLayout="column wrap" *ngFor="let b of blo">
+      <mat-card>
+        <mat-card-title>{{ b.btitle }}</mat-card-title>
+        <mat-card-content>{{ b.bcontent }}</mat-card-content>
+        <mat-card-footer>{{ b.bauthorname }}</mat-card-footer>
+      </mat-card>
+    </div>
+</div>
+</div> -->
+<div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="70px"  style=" margin-top: 110px;" >
+
+<div fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="30px">
+
+  <div fxLayout="row wrap" *ngFor="let b of blogWriteDetails" >
+    <mat-card fxLayoutGap="40px">
+      <img mat-card-image src="{{b.imgpath}}">
+      <!-- <mat-card-title>{{ b.title }}</mat-card-title> -->
+      <mat-card-content>
+        <h4>{{ b.title }}</h4>
+        <p class="m-14-06 ">{{ b.content }}</p>
+        <div>&nbsp;</div>
+        <p class="r-12-v1">{{ b.date }}</p>
+      </mat-card-content>
+
+      <button mat-button color="warn" class="m-14-06" (click)="readMoredetails(b.path)"><u>Read more >></u></button>
+    </mat-card>
+  </div>
+  </div>
+  <div fxLayout="column" fxLayout="start end ">
+
+    <mat-card class="size1">
+      <h3 fxLayoutAlign="center center" style="color:rgb(237,79,53)">What's New</h3>
+      <mat-divider></mat-divider>
+      <div>&nbsp;</div>
+      <div>&nbsp;</div>
+      <div *ngFor="let b of blogWriteDetails" >
+      <h6>{{b.title}}</h6>
+      <p class="r-12-v1">{{b.date}}</p>
+      <div>&nbsp;</div>
+      <mat-divider></mat-divider>
+    </div>
+      <!-- <div *ngFor="let reg of registerDetails">
+      <div *ngFor="let review of reviewData">
+        <div *ngFor="let home of homeDetails">
+          <div ></div>
+
+
+<mat-card class="inner-card-size">
+  <div>&nbsp;</div>
+    <mat-card-title>{{reg.uname}}</mat-card-title>
+    <h2>name of the restaurant:-{{home.hotel}}</h2>
+    <mat-card-content>{{review.ucomment}}</mat-card-content>
+    <mat-divider></mat-divider>
+  </mat-card>
+  </div>
+</div>
+</div> -->
+  </mat-card>
+  <!-- <div fxLayout="column" fxLayoutAlign="start start">
+    <mat-card class="size2">
+      <p>hgj</p>
+    </mat-card>
+
+  </div> -->
+  </div>
+
+
+
+
+
+

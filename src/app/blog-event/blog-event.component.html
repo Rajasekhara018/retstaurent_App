@@ -1,0 +1,70 @@
+
+<div>
+
+ <div fxLayout="column" fxLayoutAlign="center center" style=" margin-top: 100px;">
+  <mat-card style="height: 841px;">
+  <div>
+    <mat-card-title mat-dialog-title>Blog</mat-card-title>
+    <mat-card-subtitle>Write something and post</mat-card-subtitle>
+    <form fxLayout="column" fxLayoutAlign="center center"  #BlogForm="ngForm">
+      <mat-form-field appearance="outline" style="width: 600px">
+        <mat-label>Title</mat-label>
+        <input matInput placeholder="title" required name="btitle" [(ngModel)]="blog.title"
+        #btitle ="ngModel"
+        />
+
+        <mat-error *ngIf="btitle.errors?.['required']">
+          Name required*
+        </mat-error>
+      </mat-form-field>
+      <div>
+        <mat-form-field appearance="fill" style="width: 600px">
+          <mat-label>Blog Content</mat-label>
+
+          <textarea
+            matInput
+            style="height: 500px"
+            required
+            name="bcontent"
+            [(ngModel)]="blog.content"
+            #bcontent = "ngModel"
+          ></textarea>
+          <mat-error *ngIf="bcontent.errors?.['required']">
+            Name required*
+          </mat-error>
+        </mat-form-field>
+      </div>
+      <div>
+        <mat-form-field appearance="outline" style="width: 600px">
+          <mat-label>Name of Author</mat-label>
+          <input matInput placeholder="title" required name="bauthorname" [(ngModel)]="blog.authorname"
+          #bauthor = "ngModel"
+          />
+          <mat-error *ngIf="bauthor.errors?.['required']">
+            Name required*
+          </mat-error>
+        </mat-form-field>
+      </div>
+      <div>
+        <button
+          mat-raised-button
+          color="warn"
+          style="width: 600px"
+          (click)="storeBlogData(BlogForm.value)"
+          [disabled]="BlogForm.invalid"
+
+        >
+          Post
+        </button>
+
+      </div>
+    </form>
+  </div>
+</mat-card>
+
+</div>
+
+
+</div>
+
+

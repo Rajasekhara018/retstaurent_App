@@ -1,0 +1,26 @@
+
+
+<div fxLayout="column wrap" fxLayoutAlign="center center" style=" margin-top: 120px;" >
+
+  <div *ngFor="let r of reservationDetails">
+
+    <h4 fxLayoutAlign="center center">Reservation History</h4>
+    <mat-card  >
+
+
+      <mat-card-title>Restaurant:- {{r.hotel}} </mat-card-title>
+      <mat-card-subtitle>{{r.location}} </mat-card-subtitle>
+      <mat-card-content>
+        <p>On {{r.udate}}</p>
+
+        <h4> Total Amount:- <b>Rs.{{r.uguests * r.price}}/-</b></h4>
+        <img matCardImage style="    width: 500px;" src="{{r.img}}">
+
+      </mat-card-content>
+
+
+    </mat-card>
+
+  </div>
+
+  </div>

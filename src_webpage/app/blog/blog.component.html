@@ -1,0 +1,26 @@
+<!-- <app-tool-bar></app-tool-bar> -->
+<!-- <div>
+
+   <mat-label>Search</mat-label> -->
+<!-- <input matInput type="text" (sChangeText)=" sTextEnter($event)" placeholder="Search" [(ngModel)] ="enterValue" (input)="onSearch()" class="sAlign">
+
+</div> -->
+<div style=" margin-top: 120px;" >
+<!-- <section class="event-beauty">
+  <img src="">
+
+</section> -->
+<div fxLayout="row wrap" fxLayoutAlign="center center">
+  <div *ngFor="let data of Blog" style="margin: 2%">
+    <!-- <div *ngIf="tSearch === '' || data.title.toLowerCase().includes(tSearch)"> -->
+      <!-- <p>{{data.title}}</p> -->
+
+      <mat-card (click)="goToBlogDetails(data.path)">
+        <img mat-card-image src=" {{ data.imgurl }}" />
+        <mat-card-title>{{ data.title }} </mat-card-title>
+        <mat-card-content class="m-16-06">{{ data.date }}</mat-card-content>
+      </mat-card>
+    </div>
+  </div>
+</div>
+<!-- </div> -->

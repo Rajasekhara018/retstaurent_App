@@ -1,0 +1,154 @@
+<div fxLayout="column " fxLayoutAlign="center center" style="margin: 120px;">
+  <!-- <div fxLayout="row" fxLayoutGap="20px">
+    <img
+      src="https://brandzy-production.s3.amazonaws.com/uploads/icon_set/watermark/55962/mini_magick20220421-14855-imcib8.png"
+      style="width: 44px;"
+      class="p-fs-10"
+    />
+    <h5 style="color: red; padding-top: 23px;">Make Secure Payment</h5>
+    <img
+      src="https://www.pngall.com/wp-content/uploads/2/SSL-PNG-Image-File.png"
+      style="
+        height: 47px;
+        width: 168px;
+        padding-left: 311px;
+        padding-top: 13px;
+      "
+    />
+  </div>
+  - Powered by
+  <img
+    src="../../assets/card-images/Toucan.svg"
+    style="padding-left: 655px; width: 138px;"
+  />
+  <div></div>
+  <div>&nbsp;</div>
+  <div *ngFor="let h of hotelName">
+    <div fxLayout="row">
+      <div fxLayout="row" fxLayoutGap="70px">
+        <div fxLayout="column">
+          <p class="m-14-06">Restaurant OrderID</p>
+          <p class="m-16-06">{{ h.order }}</p>
+        </div>
+
+        <div fxLayout="row">
+          <div fxLayout="column">
+            <p class="m-14-06">Amount</p>
+            <p class="m-16-06">
+              {{ h.price * h.uguests | currency: 'INR' }}/-
+            </p>
+          </div>
+        </div>
+      </div>
+       <mat-divider></mat-divider>
+    </div> -->
+  <div>
+    <mat-card>
+      <!-- <div *ngFor="let h of hotelName">
+      <p class="r-16-06">
+        Grand Total:- {{ h.uguests }} X {{ h.price }} per person
+         <br />
+
+         Rs.{{ h.price * h.uguests }}/-
+       </p>
+       <mat-divider></mat-divider>
+    </div> -->
+      <div>
+        <div fxLayout="row" fxLayoutGap="20px">
+          <img
+            src="https://brandzy-production.s3.amazonaws.com/uploads/icon_set/watermark/55962/mini_magick20220421-14855-imcib8.png"
+            style="width: 44px;"
+            class="p-fs-10"
+          />
+          <h5 style="color: red; padding-top: 2px;">Make Secure Payment</h5>
+          <img
+            src="https://www.pngall.com/wp-content/uploads/2/SSL-PNG-Image-File.png"
+            style="
+              height: 47px;
+              width: 168px;
+              padding-left: 311px;
+              padding-top: 13px;
+            "
+          />
+        </div>
+        <!-- Powered by -->
+        <img
+          src="../../assets/card-images/Toucan.svg"
+          style="padding-left: 655px; width: 138px;"
+        />
+        <div></div>
+        <div>&nbsp;</div>
+        <div *ngFor="let h of hotelName">
+          <div fxLayout="row">
+            <div fxLayout="row" fxLayoutGap="70px">
+              <div fxLayout="column">
+                <p class="m-14-06">Restaurant OrderID</p>
+                <p class="m-16-06">{{ h.order }}</p>
+              </div>
+
+              <div fxLayout="row">
+                <div fxLayout="column">
+                  <p class="m-14-06">Amount</p>
+                  <p class="m-16-06">
+                    {{ h.price * h.uguests | currency: 'INR' }}/-
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <mat-divider></mat-divider>
+          <div>&nbsp;</div>
+          <div>&nbsp;</div>
+          <section style="background-color: rgb(254, 246, 196); height: 204px;">
+            <div>&nbsp;</div>
+            <div>&nbsp;</div>
+
+            <div fxLayout="row" fxLayoutGap="16px">
+              <div fxLayout="column">
+                <div>&nbsp;</div>
+                <mat-spinner
+                  color="warn"
+                  diameter="60"
+                  style="left: 50px;"
+                ></mat-spinner>
+              </div>
+
+              <div>
+                <h4 style="padding-left: 112px;">
+                  Processing Payment Securely...
+                </h4>
+                <ul class="m-16-06" style="padding-left: 129px;">
+                  <li>Do not press the back button or refresh the page</li>
+                  <li>Make sure you have stable internet connection</li>
+                </ul>
+              </div>
+            </div>
+          </section>
+        </div>
+        <div
+          fxLayout="row wrap"
+          fxLayoutGap="12px"
+          class="image-resize"
+          style="position: fixed; position: sticky;"
+        >
+          <img
+            style="padding-top: 104px;"
+            src="../../assets/card-images/american-express.png"
+          />
+          <img
+            style="padding-top: 100px;"
+            src="../../assets/card-images/mastercard.svg"
+          />
+          <img
+            style="padding-top: 104px;"
+            src="../../assets/card-images/visa.svg"
+          />
+          <img
+            style="padding-top: 104px;"
+            src="../../assets//card-images/rupay.svg"
+          />
+        </div>
+      </div>
+    </mat-card>
+  </div>
+</div>

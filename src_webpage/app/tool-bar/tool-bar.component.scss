@@ -1,0 +1,61 @@
+@import '../../styles.scss';
+
+.tool{
+  padding: 20%;
+}
+.tRow{
+  background-color:#FFF9B0;
+  padding: 0 32px;
+  height: 72px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 2;
+
+
+}
+.container
+{
+  width: 100%;
+  height: 100%;
+  margin: auto;
+  position: relative;
+  // padding: 20px;
+}
+  .Draw{
+    display: flex;
+    padding: 2px;
+    width: 250px;
+    height: 100%;
+
+  }
+  // .drawerImage{
+  //   background-color: rgb(216,212,205);
+  // }
+.menu
+{
+  margin-left: 5rem;
+}
+.f-s-20{
+  font-size: 20px;
+
+}
+.p-fs-10{
+  padding: 10px;
+
+
+}
+.title1{
+  font-family: cursive;
+
+}
+.active{
+  // background-color:rgb(223,153,54);
+  // font-weight: 100;
+  color: rgb(237,79,53);
+}
+.inner-card-size{
+  overflow: overlay;
+  height: 300px;
+}

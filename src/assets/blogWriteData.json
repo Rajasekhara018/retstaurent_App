@@ -1,0 +1,44 @@
+[
+  {
+    "imgpath": "../../assets/BlogWrite/mom.png",
+    "title": "Time For Moms To Take A Break At The Best Restaurants In Delhi",
+    "date": "6th May 2022/by Dineout Passport",
+    "content": "Mommies, we know you don’t get the credit you deserve. You do so much! Taking care of the family, looking after the kids, ensuring everything is just right for everyone is not easy and we don’t think just a...",
+    "path":"mom"
+  },
+  {
+    "imgpath": "../../assets/BlogWrite/openAir.jpg",
+    "title": "This Stunning Open-Air Restaurant In South Delhi Is The Perfect Place To Beat The Heat",
+    "date": "4th May 2022/by Mohana Chakraborty",
+    "content": "Summers and open-air setups have a longstanding bond that still hasn’t been swayed by the wind. If you have been looking for a breezy romantic setup in the heart of South Delhi, ..."
+    ,"path":"open"
+  },
+  {
+    "imgpath": "../../assets/BlogWrite/Nomimono.jpg",
+    "title": "For A Never Ending Nom Nom Sesh Visit Nomimono",
+    "date": "8th April 2022/by Mohana Chakraborty",
+    "content": "A Japanese word for ‘drink’, ‘beverage’, or ‘something to drink’ in general, Nomimono offers much more than just drinks. A Pan Asian wonder, Nomimono is a casual dining restaurant that is a heaven for Asian cuisine lovers..."
+    ,"path":"nom"
+  },
+  {
+    "imgpath": "../../assets/BlogWrite/cocktails.png",
+    "title": "This Should be Your Signature Summer Drink Based on Your Zodiac Sign",
+    "date": "8th April 2022/by Shivangi Goel",
+    "content": "Chilled beers, fruity cocktails, sparkling sodas, and milkshakes are synonymous with summers. After all, they are a perfect antidote to the scorching heat of the sun..."
+    ,"path":"cocktails"
+  },
+  {
+    "imgpath": "../../assets/BlogWrite/health.jpg",
+    "title": "World Health Day: 11 ways to make your dining experience healthier at restaurants",
+    "date": "7th April 2022/by Dineout Passport",
+    "content": "Keto diets, intermittent fasting, conscious eating, veganism and more…All these food trends seem to be taking over the world and the followers of these trends have demonised those of us who enjoy eating out!..."
+    ,"path":"health"
+  },
+  {
+    "imgpath": "../../assets/BlogWrite/pet.jpg",
+    "title": "PettinOut: The Ultimutt Pet Event For You and Your Dog",
+    "date": "24th March 2022/by Nandini Poddar",
+    "content": "SteppinOut by Dineout, in association with Heads Up For Tails, brings to you PettinOut—the best pet event in your city along with some great stuff for your furry family. While this will be an excellent hangout..."
+    ,"path":"pet"
+  }
+]

@@ -1,0 +1,38 @@
+<div
+  fxLayout="column wrap"
+  fxLayoutAlign="center center"
+  style="margin-top: 120px"
+>
+  <div *ngFor="let r of reservationDetails">
+    <h4 fxLayoutAlign="center center">Upcoming Reservation</h4>
+    <mat-card>
+      <mat-card-title
+        ><h5>Restaurant:- {{ r.hotel }}</h5></mat-card-title
+      >
+      <mat-card-subtitle class="m-16-06">{{ r.location }} </mat-card-subtitle>
+      <mat-card-content>
+        <p class="m-16-06">On {{ r.udate }}</p>
+
+        <h4>
+          Total Amount:- <b>Rs.{{ r.uguests * r.price }}/-</b>
+        </h4>
+        <img matCardImage src="{{ r.img }}" />
+      </mat-card-content>
+      <div>&nbsp;</div>
+      <div fxLayoutAlign="center center">
+        <button
+          mat-raised-button
+          color="warn"
+          (click)="cancelBooking('Your booking has been cancelled', 'dismiss')"
+        >
+          Cancel booking
+        </button>
+      </div>
+      <div class="spc-16"></div>
+      <div fxLayoutAlign="center center">
+        <button mat-raised-button color="warn" (click)=" goDineoutPage()" >Advance Pay</button>
+      </div>
+    </mat-card>
+    <!-- <h1 fxLayoutAlign="center center">To Pay You Can goto DineOut Pay</h1> -->
+  </div>
+</div>

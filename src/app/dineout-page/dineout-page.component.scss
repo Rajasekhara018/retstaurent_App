@@ -1,0 +1,108 @@
+
+@import '../../styles.scss';
+
+.sizing{
+  width: 500px;
+  height: 436px;
+
+  left: 104px;
+}
+mat-tab-group {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: row;
+}
+
+:host ::ng-deep .mat-tab-body-wrapper {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.mat-tab-body {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+::ng-deep .mat-tab-body-content {
+  height: auto !important;
+  padding: 2px;
+}
+
+:host ::ng-deep mat-ink-bar {
+  display: none;
+}
+
+::ng-deep .mat-tab-header {
+  margin-right: 20px !important;
+  // margin-top: 24px !important;
+  border-bottom: none !important;
+}
+
+:host ::ng-deep .mat-tab-labels {
+  flex-direction: column;
+  // border-left: solid 2px var(--brandColor);
+}
+
+::ng-deep .mat-tab-label {
+  text-align: left !important;
+  justify-content: left !important;
+}
+
+// :host ::ng-deep.mat-tab-label.mat-tab-label-active {
+//   padding: 0 16px !important;
+//   // background-color: rgba(var(--brandRGBColor), var(--brandOpacity)) !important;
+//   // border-left: 8px solid var(--brandColor) !important;
+//   color: rgba(0, 0, 0, 1) !important;
+// }
+:host ::ng-deep.mat-tab-label.mat-tab-label-active {
+  padding: 0 16px !important;
+  border-left: solid 5px rgb(238,84,45);
+  color: rgba(0, 0, 0, 1) !important;
+  background-color:rgb(231,231,231);
+}
+///////////////////////////main ------end//////////////////
+
+
+
+h4{
+  font-size: 32px;
+  font-family: Roboto;
+  font-weight:normal;
+  opacity: 0.87;
+  letter-spacing: 0.24px;
+  line-height: 1.21;
+  }
+  .r-16-06 {
+    font-family: Roboto;
+    font-size: 16px;
+    font-weight: normal;
+    line-height: 1.19;
+    letter-spacing: 0.49px;
+    opacity: 0.77; // the last bits in the class name 06 is the opacity. We have changed the opacity amount in side the class because the background default colour from Angular is black 0.87.
+    // color: rgba(0, 0, 0, 0.6);
+    padding: 0 0 8px 0;
+    margin: 0;
+  }
+  img{
+    width: 68px;
+    height: 50px;
+
+  }
+.image-resize{
+  padding-top: 80px;
+  position: fixed;
+  // position: sticky;
+}
+.footer{
+  position: absolute;
+  bottom: 16px;
+  left: 0;
+  width: 100%;
+}
+.innerCard{
+  width: 400px;
+  min-height: 400px;
+  padding: 40px;
+}

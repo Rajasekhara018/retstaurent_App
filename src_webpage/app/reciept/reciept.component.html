@@ -1,0 +1,76 @@
+<div fxLayout="row" fxLayoutAlign="center center" style="margin: 7%">
+  <mat-card>
+    <mat-icon (click)="closereceipt()" style="padding-left: 1085px;">
+      close
+    </mat-icon>
+    <div>
+      <h3 fxLayoutAlign="center center">RESTAURANTS </h3>
+      <div
+        fxLayout="column wrap"
+        fxLayoutAlign="center center"
+        fxLayoutGap="20px"
+      >
+        <div>
+          <div fxLayout="row " fxLayoutAlign="center center" fxLayoutGap="30px">
+            <mat-icon class="resize">
+
+          check_circle_outline
+
+          </mat-icon>
+            <!-- <img
+              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRS7EFJUpz6jywYJqoAKChr9nIJ71Wbo2k1NQ&usqp=CAU"
+              style="height: 77px; padding-bottom: 12px"
+            /> -->
+            <div fxLayout="column">
+              <h5>Payment Successful</h5>
+              <p class="r-14">Thank you, Your payment has been processed</p>
+            </div>
+          </div>
+        </div>
+        <div>
+          <mat-divider></mat-divider>
+        <div
+          *ngFor="let rest of reservationDetails"
+          fxLayoutAlign="center center"
+           >
+
+          <div *ngFor="let h of hotelName" fxLayoutGap="20PX">
+            <div>&nbsp;</div>
+            <p class="m-16-08">{{ date | date: "medium" }}</p>
+            <p fxLayoutAlign="center center" class="m-16-08">{{ h.order }}</p>
+          </div>
+        </div>
+        <div
+          fxLayout="row wrap"
+          fxLayoutAlign="center center "
+          fxLayoutGap="650px"
+          *ngFor="let h of hotelName"
+        >
+          <div fxLayout="row ">
+            <div fxLayout="column wrap">
+              <p class="r-14">Invoice</p>
+              <p class="m-16-08" fxLayoutAlign="start">{{ invoice }}</p>
+              &nbsp;
+
+              <p class="r-14">Approval code</p>
+              <p class="m-16-08" fxLayoutAlign="start">APPROVE</p>
+            </div>
+          </div>
+          &nbsp;
+          <div fxLayout="row wrap">
+            <div fxLayout="column">
+              <p class="r-14" fxLayoutAlign="center">Transaction Amount</p>
+              <p class="m-16-08" fxLayoutAlign="end">
+                {{ h.price * h.uguests | currency: "INR" }}/-
+              </p>
+              &nbsp;
+              <p class="r-14" fxLayoutAlign="end end">Transaction ID</p>
+              <p class="m-16-08" fxLayoutAlign="end">{{ TranID }}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  </mat-card>
+</div>

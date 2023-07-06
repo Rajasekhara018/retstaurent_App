@@ -1,0 +1,58 @@
+// .bSet{
+//   margin: 106px;
+// }
+// mat-card{
+//   max-width: 200px;
+// }
+// .container{
+//   margin: 96px;
+// }
+// .button{
+//   background-color: #EEEEEE;
+//   // padding: 50px;
+// }
+// .hBg{
+//   background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTzgU9H-ReMfP3yUmwvHdysZhRTGWXOPwpYMw&usqp=CAU);
+//   height: 189px;
+//   margin-top: -97px;
+//   margin-left: -100px;
+//   margin-right: -100px;
+// }
+// .hSearch{
+
+//   width: 50%;
+//   height: 45px ;
+// }
+// .hButton{
+//   width: 87px;
+//   height: 43px;
+// }
+
+@import '../../styles.scss';
+matcard{
+  height: 415px;
+  width: 400px;
+}
+img{
+  width: 500px;
+    height: 400px;
+}
+h4{
+  font-size: 32px;
+  font-family: Roboto;
+  font-weight:normal;
+  opacity: 0.87;
+  letter-spacing: 0.24px;
+  line-height: 1.21;
+  }
+  .r-16-06 {
+    font-family: Roboto;
+    font-size: 16px;
+    font-weight: normal;
+    line-height: 1.19;
+    letter-spacing: 0.49px;
+    opacity: 0.77; // the last bits in the class name 06 is the opacity. We have changed the opacity amount in side the class because the background default colour from Angular is black 0.87.
+    // color: rgba(0, 0, 0, 0.6);
+    padding: 0 0 8px 0;
+    margin: 0;
+  }

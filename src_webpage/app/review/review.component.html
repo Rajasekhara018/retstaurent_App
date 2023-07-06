@@ -1,0 +1,42 @@
+<!-- <div>
+  <mat-icon >close</mat-icon>
+</div> -->
+<div fxLayout="column" fxLayoutAlign="center center">
+  <!-- <mat-card > -->
+  <div *ngFor="let home of homeDetails">
+    <h5>Give Rating for {{ home.hotel }}</h5>
+  </div>
+  <div *ngFor="let reg of registrationDetails">
+    <h5>{{ reg.uname }}</h5>
+  </div>
+  <div>
+    <button
+      mat-icon-button
+      *ngFor="let rate of ratingArray; index as i"
+      (click)="onclick(i+1 )"
+      color="warn"
+    >
+      <mat-icon>
+        {{ showIcon(i + 1) }}
+      </mat-icon>
+    </button>
+  </div>
+
+  <div>
+    <form #reviewForm="ngForm">
+      <mat-form-field class="m-16-06">
+        <mat-label>Write a comment</mat-label>
+        <input
+          matInput
+          placeholder="write down your comments.It might go viral"
+          [(ngModel)]="comment"
+          name="ucomment"
+          #ucomment="ngModel"
+        />
+        <mat-icon matSuffix (click)="goToStorage($event)">send</mat-icon>
+      </mat-form-field>
+    </form>
+  </div>
+
+  <!-- </mat-card> -->
+</div>

@@ -1,0 +1,99 @@
+<div fxLayout="row wrap" fxLayoutAlign="center center" style="margin: 200px;">
+  <div>
+    <mat-card>
+      <div>
+        <div fxLayout="row" fxLayoutGap="20px">
+          <img
+            src="https://brandzy-production.s3.amazonaws.com/uploads/icon_set/watermark/55962/mini_magick20220421-14855-imcib8.png"
+            style="width: 44px;"
+            class="p-fs-10"
+          />
+          <h5 style="color: red; padding-top: 2px;">Make Secure Payment</h5>
+          <img
+            src="https://www.pngall.com/wp-content/uploads/2/SSL-PNG-Image-File.png"
+            style="
+              height: 47px;
+              width: 168px;
+              padding-left: 311px;
+              padding-top: 13px;
+            "
+          />
+        </div>
+        <!-- Powered by -->
+        <img
+          src="../../assets/card-images/Toucan.svg"
+          style="padding-left: 655px; width: 138px;"
+        />
+        <div></div>
+        <div>&nbsp;</div>
+        <div *ngFor="let h of hotelName">
+          <div fxLayout="row">
+            <div fxLayout="row" fxLayoutGap="70px">
+              <div fxLayout="column">
+                <p class="m-14-06">Restaurant OrderID</p>
+                <p class="m-16-06">{{ h.order }}</p>
+              </div>
+
+              <div fxLayout="row">
+                <div fxLayout="column">
+                  <p class="m-14-06">Amount</p>
+                  <p class="m-16-06">
+                    {{ h.price * h.uguests | currency: 'INR' }}/-
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <mat-divider></mat-divider>
+          <div>&nbsp;</div>
+          <div>&nbsp;</div>
+          <section style="background-color: rgb(232, 245, 234); height: 200px;">
+            <div>&nbsp;</div>
+            <div fxLayout="row" fxLayoutAlign="start center" fxLayoutGap="20px">
+              <div fxLayout="column">
+                <mat-icon
+                  style="
+                    width: 68px;
+                    height: 52px;
+                    font-size: 44px;
+                    color: rgb(211, 69, 44);
+                    padding: 15px;
+                  "
+                >
+                  check
+                </mat-icon>
+              </div>
+              <div fxLayout="row">
+                <div fxLayout="column">
+                  <p class="m-16-08">Payment successful</p>
+                  <p class="r-12-v1" >
+                    loading the Restaurants website now...
+                  </p>
+                </div>
+              </div>
+            </div>
+          </section>
+
+            <div fxLayout="row wrap" fxLayoutGap="12px" class="image-resize" style="position: fixed;position: sticky;">
+            <img
+              style="padding-top: 140px;"
+              src="../../assets/card-images/american-express.png"
+            />
+            <img
+              style="padding-top: 140px;"
+              src="../../assets/card-images/mastercard.svg"
+            />
+            <img
+              style="padding-top: 140px;"
+              src="../../assets/card-images/visa.svg"
+            />
+            <img
+              style="padding-top: 140px;"
+              src="../../assets//card-images/rupay.svg"
+            />
+          </div>
+        </div>
+      </div>
+    </mat-card>
+  </div>
+</div>

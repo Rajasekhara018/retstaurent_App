@@ -1,0 +1,27 @@
+<!-- <app-tool-bar></app-tool-bar> -->
+<mat-drawer-container class="container">
+  <mat-drawer #over mode="over" opened class="Draw">
+    <div fxLayout="column" fxLayoutAlign="center center" style="margin: 90px;">
+      <h5 style="padding-top: 27px;"><b>Restaurants</b></h5>
+      <mat-action-list  class="m-16-06">
+        <mat-list-item (click)="gohome()">Home</mat-list-item>
+        <mat-list-item [matMenuTriggerFor]="menu">Reservations</mat-list-item>
+        <!-- <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
+        <mat-icon>more_vert</mat-icon>
+      </button> -->
+
+        <mat-list-item (click)="goProfile()">Profile</mat-list-item>
+        <mat-list-item (click)="goContact()">Contact us</mat-list-item>
+      </mat-action-list>
+      <mat-menu #menu="matMenu">
+        <button mat-menu-item (click)="goReservation()">
+          <span  class="m-16-06">Upcoming Reservation</span>
+        </button>
+        <button mat-menu-item (click)="goBookingHistory()">
+          <span  class="m-16-06">Booking history</span>
+        </button>
+      </mat-menu>
+    </div>
+  </mat-drawer>
+  <mat-drawer-content></mat-drawer-content>
+</mat-drawer-container>

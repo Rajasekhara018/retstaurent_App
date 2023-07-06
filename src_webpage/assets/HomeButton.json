@@ -1,0 +1,34 @@
+[
+{
+  "name": "Biryani",
+  "location": "Banjara hills",
+  "img": "../../assets/home/meh.jpeg",
+  "path":"biryani",
+  "price":"250",
+  "cuisine":"Biryani"
+},
+{
+  "name": "Buffet",
+  "location": "Banjara hills",
+  "img": "../../assets/home/bbq.jpg",
+  "path":"buffet",
+  "price":"1000",
+  "cuisine":"Buffet"
+},
+{
+  "name": "Pure-Veg",
+  "location": "Banjara hills",
+  "img": "../../assets/home/chut.jpeg",
+  "path":"pure",
+  "price":"300",
+  "cuisine":"Pure veg"
+},
+{
+  "name": "Desserts",
+  "location": "Banjara hills",
+  "img": "../../assets/home/cream.jpg",
+  "path":"top",
+  "price":"200",
+  "cuisine":"desserts"
+}
+]

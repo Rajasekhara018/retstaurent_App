@@ -1,0 +1,196 @@
+<div>
+  &nbsp;
+  <mat-drawer-container>
+    <mat-drawer mode="side" opened>
+      <app-book-register></app-book-register>
+    </mat-drawer>
+    <mat-drawer-content>
+      <div
+        fxLayout="row "
+        fxLayoutAlign="center center"
+        style="margin-top: 120px"
+      >
+        <mat-card class="oICard">
+          <img
+            mat-card-image
+            src="https://cf.bstatic.com/xdata/images/hotel/max1280x900/19667997.jpg?k=1b4bdeb11ea3c9bcfaf01a16de932c4c8b93de8a3eb956f484ca39983bcb73e6&o=&hp=1"
+          />
+          <mat-card-title><h4>Ohris</h4></mat-card-title>
+          <mat-card-subtitle class="m-16-06">
+            Rs.1200 for 2|North Indian,Chinese,Rajesthani,South Indian
+          </mat-card-subtitle>
+          <mat-card-subtitle class="m-16-06"
+            >White House|Begumpet|Hyderabad</mat-card-subtitle
+          >
+
+          <mat-card-content>
+            <b>Time:-</b>
+            (Opens at 12:00pm)
+          </mat-card-content>
+        </mat-card>
+      </div>
+      <br />
+      <div fxLayout="row " fxLayoutAlign="center center">
+        <mat-card class="oICard">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3806.5029905218753!2d78.45551951518658!3d17.43562350600063!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb90b733e1b225%3A0xa36f43dace96faf9!2sOhri&#39;s%20Jiva%20Imperia!5e0!3m2!1sen!2sin!4v1668423863298!5m2!1sen!2sin"
+            width="100%"
+            height="550px"
+            style="border: 0"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+          ></iframe>
+        </mat-card>
+      </div>
+      <div class="spc-24"></div>
+      <div fxLayout="row" fxLayoutAlign="center center">
+        <mat-card class="oICard">
+          <mat-tab-group>
+            <mat-tab label="Menu">
+              <img
+                style="width: 866px"
+                src="https://im1.dineout.co.in/images/uploads/restaurant/sharpen/3/w/a/m3498-15825275395e53743324e30.jpg?tr=tr:n-xlarge"
+              />
+            </mat-tab>
+            <mat-tab label="Review">
+              <h4 fxLayoutAlign="center center" (click)="showReviews()">
+                Reviews
+              </h4>
+              <div>
+                <p class="m-14-06" *ngIf="userReview">
+                  <mat-icon style="width: 54px; height: 54px; font-size: 51px">
+                    account_circle_outlined
+                  </mat-icon>
+                  <br />
+                  {{ reviewData[0] }}
+                </p>
+
+                <p class="m-14-06" *ngIf="userReview">
+                  {{ reviewData[2] }}
+                </p>
+
+                <h4 *ngIf="userReview">
+                  {{ starData }}
+                  <mat-icon color="warn">star</mat-icon>
+                </h4>
+              </div>
+            </mat-tab>
+            <mat-tab label="About">
+              <p class="m-16-06">
+                Ohri's Jiva is known for its unique texture and unmatched
+                flavour. The pure veg restaurant serves North Indian, Chinese,
+                and Continental cuisines, which you get to savor at
+                cost-effective prices. The exquisite ambiance of the place
+                matches the preferences of people coming from a wide demography.
+              </p>
+
+              <h5 style="color: #ca965c">
+                <mat-icon>restaurant_menu</mat-icon>
+                <b>Cuisine</b>
+              </h5>
+              <p class="m-16-06">
+                North Indian,Chinese,Rajasthani,South Indian
+              </p>
+
+              <h5 style="color: #ca965c">
+                <mat-icon>tapas</mat-icon>
+                <b>Type</b>
+              </h5>
+              <p class="m-16-06">Casual Dining</p>
+              <h5 style="color: #ca965c">
+                <mat-icon>currency_rupee</mat-icon>
+                <b>Average Cost</b>
+              </h5>
+              <p class="m-16-06">12,00 for two people</p>
+              <h5 style="color: #ca965c">
+                <mat-icon>trending_up</mat-icon>
+                <b>Best Selling</b>
+              </h5>
+              <p class="m-16-06">
+                Banana Dosa, Chocolate Fountain, Paneer Manchurian, Noodle, Sev
+                Puri, Veg Buffet
+              </p>
+            </mat-tab>
+            <mat-tab label="Help">
+              <h3><b>We're always here to help</b></h3>
+              <h4><b>Call us at</b></h4>
+              <p class="m-16-06">
+                <mat-icon>phone</mat-icon>
+                8987898789
+              </p>
+            </mat-tab>
+          </mat-tab-group>
+        </mat-card>
+      </div>
+      <div>&nbsp;</div>
+      <div>&nbsp;</div>
+      <div fxLayout="row" fxLayoutAlign="center center">
+        <mat-card class="oICard">
+          <mat-card-title><h4>FAQ</h4></mat-card-title>
+          <mat-accordion>
+            <mat-expansion-panel>
+              <mat-expansion-panel-header>
+                <mat-panel-title class="m-16-06">
+                  What cuisines are served at Ohri's Jiva Royal, Banjara Hills?
+                </mat-panel-title>
+              </mat-expansion-panel-header>
+              <p class="m-16-06">
+                The main cuisine served at Ohri's Jiva Royal, Banjara Hills is
+                Multicuisine.
+              </p>
+            </mat-expansion-panel>
+            <mat-expansion-panel>
+              <mat-expansion-panel-header>
+                <mat-panel-title class="m-16-06">
+                  What are current deals at Ohri's Jiva Royal, Banjara Hills?
+                </mat-panel-title>
+              </mat-expansion-panel-header>
+              <p class="m-16-06">
+                Get exclusive 30% OFF at Ohri's Jiva Royal, Banjara Hills only
+                on EazyDiner. Browse through EazyDiner to avail dining discounts
+                upto 50% OFF.
+              </p>
+            </mat-expansion-panel>
+            <mat-expansion-panel>
+              <mat-expansion-panel-header>
+                <mat-panel-title class="m-16-06">
+                  What is the cost for two at Ohri's Jiva Royal, Banjara Hills?
+                </mat-panel-title>
+              </mat-expansion-panel-header>
+              <p class="m-16-06">
+                The cost of two at Ohri's Jiva Royal, Banjara Hills is ₹1000.
+                You can save EXTRA over and above the restaurant deal applied by
+                paying your restaurant bill on the EazyDiner app via PayEazy.
+              </p>
+            </mat-expansion-panel>
+            <mat-expansion-panel>
+              <mat-expansion-panel-header>
+                <mat-panel-title class="m-16-06">
+                  Does Ohri's Jiva Royal, Banjara Hills serve pure vegetarian
+                  dishes?
+                </mat-panel-title>
+              </mat-expansion-panel-header>
+              <p class="m-16-06">
+                No, Ohri's Jiva Royal, Banjara Hills serves both veg and non-veg
+                dishes.
+              </p>
+            </mat-expansion-panel>
+            <mat-expansion-panel>
+              <mat-expansion-panel-header>
+                <mat-panel-title class="m-16-06">
+                  What are the operational timings of Ohri's Jiva Royal, Banjara
+                  Hills?
+                </mat-panel-title>
+              </mat-expansion-panel-header>
+              <p class="m-16-06">
+                Ohri's Jiva Royal, Banjara Hills restaurant operational timing
+                for today: 12:00 PM to 11:00 PM
+              </p>
+            </mat-expansion-panel>
+          </mat-accordion>
+        </mat-card>
+      </div>
+    </mat-drawer-content>
+  </mat-drawer-container>
+</div>

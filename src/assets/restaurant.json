@@ -1,0 +1,96 @@
+[
+  {
+    "rname": "Ohris",
+    "location": "Begumpet",
+    "img": "../../assets/home/ohris.jpg",
+    "path":"ohris",
+    "price":"600",
+    "cuisine":"North Indian",
+    "id":"1",
+    "order":"ROS-100201"
+
+  },
+  {
+    "rname": "Abs",
+    "location": "Banjara hills",
+    "img": "../../assets/home/Abs.webp",
+    "path":"abs",
+    "price":"700",
+    "cuisine":"Continental",
+    "id":"2",
+    "order":"RAS-100202"
+  },
+  {
+    "rname": "HeadQuaters",
+    "location": "Somajiguda",
+    "img": "../../assets/home/HeadQuaters.webp",
+    "path":"head",
+    "price":"850",
+    "cuisine":"Chinese",
+    "id":"3",
+    "order":"RHS-100203"
+  },
+  {
+    "rname": "Amogham",
+    "location": "Khairadabad",
+    "img": "../../assets/home/Amogham.png",
+    "path":"amogham",
+    "price":"500",
+    "cuisine":"Mughlai",
+    "id":"4",
+    "order":"RAMS-100204"
+  },
+  {
+    "rname": "Exotica",
+    "location": "Banjara hills",
+    "img": "../../assets/home/Exotica.webp",
+    "path":"exotica",
+    "price":"750",
+    "cuisine":"Asian",
+    "id":"5",
+    "order":"RES-100205"
+  },
+  {
+    "rname": "Mehfil",
+    "location": "Banjara hills",
+    "img": "../../assets/home/meh.jpeg",
+    "path":"biryani",
+    "price":"250",
+    "cuisine":"Biryani",
+    "id":"6",
+    "order":"RMS-100206"
+  },
+  {
+    "rname": "Barbeque Nation",
+    "location": "Banjara hills",
+    "img": "../../assets/home/bbq.jpg",
+    "path":"buffet",
+    "price":"1000",
+    "cuisine":"Buffet",
+    "id":"7",
+    "order":"RBNS-100207"
+  },
+  {
+    "rname": "Chuntneys",
+    "location": "Banjara hills",
+    "img": "../../assets/home/chut.jpeg",
+    "path":"pure",
+    "price":"300",
+    "cuisine":"Pure veg",
+    "id":"8",
+    "order":"RCS-100208"
+  },
+  {
+    "rname": "Cream Stone",
+    "location": "Banjara hills",
+    "img": "../../assets/home/cream.jpg",
+    "path":"top",
+    "price":"200",
+    "cuisine":"desserts",
+    "id":"9",
+    "order":"RCSS-100209"
+  }
+
+
+
+]

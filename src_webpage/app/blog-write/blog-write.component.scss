@@ -1,0 +1,36 @@
+@import '../../styles.scss';
+
+mat-card{
+  width: 800px;
+  height: 550px;
+
+}
+.bg-pic{
+  background-image: url(https://img.freepik.com/premium-photo/four-wooden-blocks-with-letters-blog-bright-surface-gray-table-business-concept_384017-3526.jpg?w=360);
+  height: 300px;
+  width: 100%;
+}
+.sizw{
+  width: 100px;
+  height: 50px;
+}
+.size1{
+  overflow: overlay;
+  width: 350px;
+  height: 500px;
+  bottom: 1400px;
+}
+.size2{
+  overflow: overlay;
+  width: 350px;
+  height: 500px;
+  bottom: 700px;
+  right: 372px;
+
+}
+.inner-card-size{
+
+  height: 100px;
+
+      width: 443px;
+}

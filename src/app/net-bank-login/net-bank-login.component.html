@@ -1,0 +1,58 @@
+<div fxLayout="row wrap" fxLayoutAlign="center center" style="margin: 118px;">
+  <mat-card>
+    <mat-card-title><h4>Net Banking</h4></mat-card-title>
+    <mat-card-content>
+      <form #NetLoginForm="ngForm">
+        <div>
+          <mat-form-field appearance="outline" style="width: 100%;">
+            <input
+              matInput
+              placeholder="Username"
+              [(ngModel)]="netLObj.nUsername"
+              name="unetUsername"
+              #unetUsername="ngModel"
+              required
+            />
+            <mat-error *ngIf="unetUsername.errors?.['required']">
+              Email required*
+            </mat-error>
+            <mat-error *ngIf="unetUsername.errors?.['pattern']">
+              Invalid Email
+            </mat-error>
+          </mat-form-field>
+
+          <mat-form-field appearance="outline" style="width: 100%;">
+            <input
+              matInput
+              placeholder="Password"
+              type="password"
+              minlength="6"
+              maxlength="8"
+              required
+              pattern="^[a-zA-Z0-9@#$&*]{8}$"
+              name="unetpassword"
+              [(ngModel)]="netLObj.nPassword"
+              #unetPassword="ngModel"
+            />
+            <mat-error *ngIf="unetPassword.errors?.['required']">
+              Password required*
+            </mat-error>
+            <mat-error *ngIf="unetPassword.errors?.['pattern']">
+              Password Invalid*
+            </mat-error>
+          </mat-form-field>
+
+          <button
+            mat-raised-button
+            style="width: 100%;"
+            color="warn"
+            [disabled]="NetLoginForm.invalid"
+            (click)="CrossNet( 'logged In','dismiss',NetLoginForm.value)"
+          >
+            Submit
+          </button>
+        </div>
+      </form>
+    </mat-card-content>
+  </mat-card>
+</div>

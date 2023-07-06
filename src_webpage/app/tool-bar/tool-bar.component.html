@@ -1,0 +1,74 @@
+
+
+
+
+
+        <div>
+          <mat-toolbar class="tRow" fxLayoutAlign="start center" fxLayoutGap="16px">
+
+            <button mat-button (click)="goSidenav()">
+              <mat-icon>menu</mat-icon>
+            </button>
+
+          <img src="https://brandzy-production.s3.amazonaws.com/uploads/icon_set/watermark/55962/mini_magick20220421-14855-imcib8.png" style="width: 44px;" class="p-fs-10">
+              <span>
+         <b class="title1" (click)="gohome()" >Restaurants</b>
+        </span>
+
+        <span style="flex: 1 1 auto"></span>
+
+
+            <button mat-button routerLinkActive="active"  routerLink="home" class="title">
+              <mat-icon>home</mat-icon>
+              <span class="f-s-20"> Home</span>
+
+            </button>
+
+            <button mat-button (click)="PaymentTitleDine()" routerLinkActive="active" routerLink="dine"   class="title">
+              <mat-icon>payment</mat-icon>
+              <span class="f-s-20"> Dineout Pay</span>
+
+            </button>
+            <button  mat-button routerLinkActive="active"  routerLink="book"  class="title">
+              <mat-icon>table_bar</mat-icon>
+              <span class="f-s-20">  Book a Table</span>
+
+            </button>
+
+            <button mat-button  #colorchange (click)="colorChange()" [ngStyle]="{'color':Selected ? '#ed4f35': ''}"  class="title">
+              <mat-icon>
+                festival
+               </mat-icon>
+               <span class="f-s-20" [matMenuTriggerFor]="eventMenu"> Events</span>
+
+             </button>
+             <mat-menu #eventMenu="matMenu">
+              <button mat-menu-item routerLink="slot"> Book a event</button>
+              <button mat-menu-item routerLink="blog"> Events</button>
+
+             </mat-menu>
+
+            <button mat-button routerLinkActive="active"  routerLink="blogwrite" class="title">
+              <mat-icon>
+                draw
+                </mat-icon>
+                <span class="f-s-20"> Blog</span>
+              </button>
+            <div>
+            <button mat-raised-button *ngIf="!hservice.IsUserlog" routerLink="login" (click)="gologin()" color="warn" >
+              <span class="f-s-20" >LOGOUT</span>
+            </button>
+            <button mat-raised-button routerLink="home" *ngIf="hservice.IsUserlog" (click)="gologout()" color="warn" >
+              <span class="f-s-20" >LOGIN</span>
+            </button>
+          </div>
+
+          </mat-toolbar>
+        </div>
+
+
+
+
+    <router-outlet></router-outlet>
+  <!-- </mat-drawer-content> -->
+<!-- </mat-drawer-container> -->

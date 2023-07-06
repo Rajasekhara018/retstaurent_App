@@ -1,0 +1,50 @@
+<!-- <app-tool-bar></app-tool-bar> -->
+<!-- <div fxLayout="column" fxLayoutAlign="center center">
+  <div style="padding: 13px;">
+    <mat-card
+      style="padding: 13px;"
+      fxLayoutGap="6px Grid"
+      style="height: 86%;"
+      (click)="ohris()"
+    >
+      <img
+        mat-card-image
+        src="https://www.ohris.com/gallery/dhaba/ambiance/2.jpg"
+      />
+      <mat-divider></mat-divider>
+      <mat-card-content>
+        <h3><b>Ohri's Jiva</b></h3>
+        <p>Begumpet,Secunderabad</p>
+        <button mat-raised-button color="accent" (click)="gopure()">Book a Table</button>
+      </mat-card-content>
+    </mat-card>
+  </div>
+
+</div> -->
+
+<div fxLayout="row wrap" fxLayoutAlign="center center" style=" margin-top: 120px;">
+  <div style="padding: 10px;" *ngFor="let rdata of restaurant" #u_rdata>
+    <!-- <div       *ngIf="tSearch === '' || rdata.rname.toLowerCase().includes(tSearch)" > -->
+
+    <!-- <div *ngIf="tSearch === '' || rdata.location.toLowerCase().includes(tSearch)"> -->
+    <mat-card (click)="goHomeDetails(rdata.path)" fxLayoutGap="30px">
+      <img mat-card-image src="{{ rdata.img }}" />
+      <mat-divider></mat-divider>
+      <mat-card-content>
+        <h4>
+          {{ rdata.rname }}
+        </h4>
+        <div class="r-16-06">
+        <p >{{ rdata.location }}</p>
+
+        <button mat-raised-button color="warn" (click)="goHomeDetails(rdata)">
+          Book a Table
+        </button>
+      </div>
+      </mat-card-content>
+    </mat-card>
+  </div>
+</div>
+
+<!-- </div> -->
+<!-- </div> -->

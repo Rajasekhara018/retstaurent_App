@@ -1,0 +1,127 @@
+<div fxLayoutAlign="center center" style="margin-top: 100px;">
+  <mat-card fxFlex="700px" fxLayout="column" fxLayoutAlign="center center">
+    <h4 fxLayoutAlign="center center">Book a Event</h4>
+    <div class="spc-16"></div>
+
+    <form #BookAEvent="ngForm">
+      <div>
+        <mat-form-field appearance="outline" fxFlex="500px">
+          <mat-label>Select Venue</mat-label>
+          <mat-select  [(ngModel)]="eventObj.hotelName"
+          name="uvenue">
+            <mat-option
+              *ngFor="let ven of venue"
+
+              value="{{ven}}"
+            >
+              {{ ven }}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+      <div>
+        <div class="spc-16"></div>
+        <mat-form-field appearance="outline" fxFlex="500px">
+          <mat-label>Select Event</mat-label>
+          <mat-select   [(ngModel)]="eventObj.event"
+          name="uevent">
+            <mat-option
+              *ngFor="let eve of typeOfEvents"
+
+              value="{{eve}}"
+            >
+              {{ eve }}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+      <div class="spc-16"></div>
+      <div>
+        <mat-form-field appearance="outline" fxFlex="500px">
+          <mat-label>Choose a date</mat-label>
+          <input
+            matInput
+            [min]="minDate"
+            [matDatepicker]="picker"
+            placeholder="MM/DD/YYYY"
+            [(ngModel)]="eventObj.date"
+            name="udate"
+          />
+          <!-- <mat-hint>MM/DD/YYYY</mat-hint> -->
+          <mat-datepicker-toggle
+            matSuffix
+            [for]="picker"
+          ></mat-datepicker-toggle>
+          <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
+      </div>
+      <div class="spc-16"></div>
+      <div>
+        <mat-form-field appearance="outline" fxFlex="500px">
+          <mat-label>Select Time</mat-label>
+          <mat-select  [(ngModel)]="eventObj.time"
+          name="utime">
+            <mat-option
+              *ngFor="let time of timings"
+
+              value="{{time}}"
+            >
+              {{ time }}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+      <div class="spc-16"></div>
+      <div>
+        <mat-form-field appearance="outline" fxFlex="500px">
+          <mat-label>Budget per Person</mat-label>
+          <mat-select [(ngModel)]="eventObj.buget" name="ubudget">
+            <mat-option
+              *ngFor="let b of budget"
+
+              value="{{b}}"
+            >
+              {{ b }}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+      <div class="spc-16"></div>
+      <div>
+      <mat-form-field appearance="outline" fxFlex="500px">
+        <mat-label>No of Guests</mat-label>
+        <mat-select [(ngModel)]="eventObj.noOfGuests" name="uguest">
+          <mat-option
+            *ngFor="let ppl of people"
+
+            value="{{ppl}}"
+          >
+            {{ ppl }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+      <div class="spc-16"></div>
+
+      <div>
+        <mat-form-field appearance="outline" fxFlex="500px">
+          <mat-label>Type Of Food</mat-label>
+          <mat-select  [(ngModel)]="eventObj.food" name="ufood">
+            <mat-option
+              *ngFor="let food of typeOfFood"
+
+              value="{{food}}"
+            >
+              {{ food }}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+
+      <div>
+        <button mat-raised-button fxFlex="500px" color="warn" (click)="storeVenueData(BookAEvent.value)">Submit</button>
+      </div>
+      <div class="spc-24"></div>
+    </form>
+  </mat-card>
+</div>

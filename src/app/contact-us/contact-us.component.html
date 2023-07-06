@@ -1,0 +1,37 @@
+<div fxLayout="column wrap" fxLayoutAlign="center center" fxLayoutGap="40px" style="margin-top: 120px;">
+  <mat-card class="contact-card1">
+    <img
+      class="contact-card-img"
+      matCardImage
+      src="https://chefscraftgourmet.com/images/easyblog_articles/17/James_GrilledLemonChicken_05-400x267.jpg"
+    />
+    <mat-card-title><h4>Contact Us </h4></mat-card-title>
+    <mat-card-content class="m-16-06">
+      <p >
+        You can reach us at contact@eazydiner.com For booking related
+        queries/issues, kindly call our 24 hours concierge at 7861004444
+      </p>
+      <p>Name of the company : EazyDiner DMCC</p>
+      <p>E-mail address : dubai-support@eazydiner.com</p>
+      <p>Phone number :  +91 7861004444</p>
+    </mat-card-content>
+  </mat-card>
+  <!-- <mat-card class="contact-card2">
+    <div fxLayout="row " fxLayoutAlign="start start">
+      <img contact-card-img matCardImage src="https://www.elluminatiinc.com/wp-content/uploads/2020/05/restresrvbild/tablereservation.png">
+
+    </div>
+
+  </mat-card> -->
+  <mat-toolbar class="footer" fxLayoutAlign="center center" fxLayoutGap="16px">
+    <div fxLayoutAlign="center center">
+      <b class="m-16-06">Available In</b>
+    </div>
+    &nbsp;
+    <mat-list role="list" fxLayout="row">
+      <mat-list-item role="listitem" *ngFor="let place of places">
+        <button mat-button class="m-16-06">{{ place | uppercase }}</button>
+      </mat-list-item>
+    </mat-list>
+  </mat-toolbar>
+</div>

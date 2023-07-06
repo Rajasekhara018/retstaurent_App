@@ -1,0 +1,404 @@
+<h4 fxLayoutAlign="center center" style="margin-top: 100px">
+  {{ hservice.PaymentTitle }}
+</h4>
+
+<div fxLayout="row " fxLayoutAlign="center center" style="margin-top: 30px">
+  <mat-card style="width: 750px; height: 831px; padding: 0">
+    <div fxLayout="row" fxLayoutGap="24px" fxLayoutAlign="start center" *ngFor="let h of hotelName">
+      <img src="{{ h.img }}" style="width: 20%; height: 100px" />
+
+      <h5 style="color: red">Make Secure Payment</h5>
+      <span class="spacer"></span>
+      <button mat-icon-button [routerLink]="['/home']">
+        <mat-icon>cancel</mat-icon>
+      </button>
+    </div>
+
+    <div>&nbsp;</div>
+    <div *ngFor="let h of hotelName">
+      <div fxLayout="row" fxLayoutGap="56px" fxLayoutAlign="start center">
+        <div fxLayout="column" style="padding-left: 24px">
+          <p class="m-14-06 spc-4">Restaurant OrderID</p>
+          <p class="m-16-06 spc-0">{{ h.order }}</p>
+        </div>
+
+        <div fxLayout="column">
+          <p class="m-14-06 spc-4">Amount</p>
+          <p class="m-16-06 spc-0">
+            {{ h.price * h.uguests | currency: "INR" }}
+          </p>
+        </div>
+
+        <span class="spacer"></span>
+        <div fxLayout="column">
+          <img src="https://www.pngall.com/wp-content/uploads/2/SSL-PNG-Image-File.png"
+            style="height: 47px; width: 168px" />
+          <img style="width: 122px" src="https://merchantunit.toucanus.net/assets/images/checkout/poweredby.svg" />
+        </div>
+      </div>
+    </div>
+    <div class="spc-8"></div>
+    <mat-divider></mat-divider>
+    <div class="spc-24"></div>
+
+    <mat-tab-group (selectedTabChange)="selectedTab($event)" [selectedIndex]="tabChangeIndex" *ngIf="pageTab">
+      <mat-tab label="Credit/Debit Card">
+        <mat-card class="innerCard">
+          <form #AdvancePayForm ="ngForm" id="loginC">
+            <div fxLayout="row">
+              <mat-form-field appearance="outline" style="width: 100%">
+                <mat-label>Card Number</mat-label>
+                <input matInput type="text" placeholder="Card Number" maxlength="16" name="ucard" required
+                  pattern="[3-6]{1}[0-9]{15}" [(ngModel)]="adObj.cardNumber" #ucard="ngModel"
+                  (change)="showCardInInput(adObj.cardNumber)" />
+                <!-- pattern="^[4-6]{1}[0-9]{15}(?:[]{})?$" -->
+                <img *ngIf="!cardImg == false" [src]="cardImg" matSuffix style="height: 40px" />
+                <!-- <img style="width: 40px ;" [src]="cardImg"> -->
+
+                <mat-error *ngIf="ucard.errors?.['required']">
+                  Card number required
+                </mat-error>
+                <mat-error *ngIf="ucard.errors?.['pattern']">
+                  Invalid card number
+                </mat-error>
+              </mat-form-field>
+            </div>
+            <!-- <button mat-raised-button (click)="cardFormat(adObj.cardNumber)">clickme</button> -->
+
+            <div fxLayout="row" fxLayoutGap="24px">
+              <div fxLayout="column" fxFlex="47">
+                <mat-form-field appearance="outline">
+                  <mat-label appearence="outline"> Valid Thru </mat-label>
+                  <input matInput matInput type="text" name="valid" placeholder="MM/YY" minlength="5" maxlength="5"
+                    [(ngModel)]="adObj.validDate" required pattern="^(?:0?[1-9]|1[0-2]) *[/\/-] *[1-9][0-9]$"
+                    #valid="ngModel" />
+
+                  <mat-error *ngIf="valid.errors?.['required']">
+                    Validity is required
+                  </mat-error>
+                  <mat-error *ngIf="valid .errors?.['pattern']">
+                    Enter valid date
+                  </mat-error>
+                </mat-form-field>
+              </div>
+              <div fxLayout="column" fxFlex="47">
+                <mat-form-field appearance="outline">
+                  <mat-label>CVV</mat-label>
+                  <input matInput [type]="hide ? 'password' : 'text'" placeholder="CVV" required pattern="[0-9]{3}"
+                    maxlength="3" name="ucvv" [(ngModel)]="adObj.cvv" #ucvv="ngModel" />
+                  <!-- <input matInput > -->
+                  <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
+                    [attr.aria-pressed]="hide">
+                    <mat-icon>{{
+                      hide ? "visibility_off" : "visibility"
+                      }}</mat-icon>
+                  </button>
+                  <mat-error *ngIf="ucvv.errors?.['required']">
+                    Name required*
+                  </mat-error>
+                  <mat-error *ngIf="ucvv.errors?.['pattern']">
+                    Enter only numbers
+                  </mat-error>
+                </mat-form-field>
+              </div>
+            </div>
+            <div fxLayout="row">
+              <mat-form-field appearance="outline" style="width: 100%">
+                <mat-label> Name on Card </mat-label>
+                <input matInput type="text" placeholder="Name on Card" required pattern="[a-zA-Z]{5,10}" name="uname"
+                  [(ngModel)]="adObj.nameOnCard" #uname="ngModel" />
+                <mat-error *ngIf="uname.errors?.['required']">
+                  Name required*
+                </mat-error>
+                <mat-error *ngIf="uname.errors?.['pattern']">
+                  Enter only letters
+                </mat-error>
+              </mat-form-field>
+            </div>
+
+            <div *ngFor="let h of hotelName">
+              <button mat-raised-button color="warn" style="width: 100%" [disabled]="AdvancePayForm.invalid"
+               (click)="
+                  storeCardDetails(
+                    'Your payment has been confirmed.',
+                    'dismiss',
+                    AdvancePayForm.value
+
+                  );
+                 ">
+                <mat-icon>lock</mat-icon>
+                PAY {{ h.price * h.uguests | currency: "INR" }}
+              </button>
+            </div>
+          </form>
+          <!-- </mat-card-content> -->
+          <div class="footer">
+            <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="16px">
+              <img style="width: 68px; height: 50px" src="../../assets/card-images/american-express.png" />
+              <img src="../../assets/card-images/mastercard.svg" />
+              <img src="../../assets/card-images/visa.svg" />
+              <img src="../../assets//card-images/rupay.svg" />
+            </div>
+          </div>
+        </mat-card>
+      </mat-tab>
+
+      <mat-tab label="Net Banking">
+        <mat-card class="innerCard" *ngIf="pageNetTab">
+          <div>
+            <mat-chip-list>
+              <mat-chip (click)="selectBank('HDFC')">
+                <img matChipAvatar src="https://companieslogo.com/img/orig/HDB-bb6241fe.png?t=1633497370" />
+                HDFC
+              </mat-chip>
+              <mat-chip (click)="selectBank('SBI')">
+                <img matChipAvatar src="https://seeklogo.com/images/S/sbi-logo-744E8B0C10-seeklogo.com.png" />
+                SBI
+              </mat-chip>
+              <mat-chip (click)="selectBank('ICICI')">
+                <img matChipAvatar src="https://companieslogo.com/img/orig/IBN-af38b5c0.png?t=1648383607" />
+                ICICI
+              </mat-chip>
+            </mat-chip-list>
+
+            <mat-chip-list>
+              <mat-chip (click)="selectBank('AXIS')">
+                <img matChipAvatar
+                  src="https://i0.wp.com/www.logotaglines.com/wp-content/uploads/2016/08/Axis-Bank-Logo.png?resize=400%2C400" />
+                AXIS
+              </mat-chip>
+
+              <mat-chip (click)="selectBank('KOTAK')">
+                <img matChipAvatar src="https://www.kotak.com/content/dam/Kotak/about-us/kotak-logo-identity.jpg" />
+                KOTAK
+              </mat-chip>
+              <mat-chip (click)="selectBank('PNB')">
+                <img matChipAvatar src="https://static.toiimg.com/photo/msid-74887573/74887573.jpg" />
+                PNB
+              </mat-chip>
+            </mat-chip-list>
+          </div>
+          <div class="spc-40"></div>
+          <form #NetBankForm="ngForm">
+            <mat-form-field appearance="outline" style="width: 100%">
+              <mat-label>Search Banks</mat-label>
+              <input matInput placeholder="Bank" [(ngModel)]="netBValue" name="unet" #u_net_select="ngModel" required />
+            </mat-form-field>
+            <div class="spc-24"></div>
+            <div *ngFor="let h of hotelName">
+              <button mat-raised-button color="warn" style="width: 100%" [disabled]="NetBankForm.invalid"
+                (click)="storeNetBAnkDetails(netBValue);NetBankForm.reset()">
+                <mat-icon>lock</mat-icon>
+                PAY {{ &nbsp; h.price * h.uguests | currency: 'INR' }}
+              </button>
+            </div>
+          </form>
+        </mat-card>
+        <mat-card class="innerCard" *ngIf="pageNetBank">
+          <!-- <div style="    padding: 59px;"> -->
+          <form #NetLoginForm="ngForm">
+            <div>
+              <mat-form-field appearance="outline" style="width: 100%">
+                <input matInput placeholder="Username" [(ngModel)]="netLObj.nUsername" name="unetUsername"
+                  #unetUsername="ngModel" required />
+                <mat-error *ngIf="unetUsername.errors?.['required']">
+                  Email required*
+                </mat-error>
+                <mat-error *ngIf="unetUsername.errors?.['pattern']">
+                  Invalid Email
+                </mat-error>
+              </mat-form-field>
+
+              <mat-form-field appearance="outline" style="width: 100%">
+                <input matInput placeholder="Password" [type]="hide ? 'password' : 'text'" minlength="6" maxlength="8"
+                  required pattern="^[a-zA-Z0-9@#$&*]{8}$" name="unetpassword" [(ngModel)]="netLObj.nPassword"
+                  #unetPassword="ngModel" />
+                <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
+                  [attr.aria-pressed]="hide">
+                  <mat-icon>{{
+                    hide ? "visibility_off" : "visibility"
+                    }}</mat-icon>
+                </button>
+                <mat-error *ngIf="unetPassword.errors?.['required']">
+                  Password required*
+                </mat-error>
+                <mat-error *ngIf="unetPassword.errors?.['pattern']">
+                  Password Invalid*
+                </mat-error>
+              </mat-form-field>
+
+              <button mat-raised-button style="width: 100%" color="warn" [disabled]="NetLoginForm.invalid"
+                (click)="CrossNet('logged In', 'dismiss', NetLoginForm.value);">
+                Submit
+              </button>
+            </div>
+          </form>
+          <!-- </div> -->
+        </mat-card>
+      </mat-tab>
+
+      <mat-tab label="UPI/BHIM">
+        <mat-card class="innerCard">
+          <form #UpiForm="ngForm">
+            <mat-form-field appearance="outline" style="width: 100%">
+              <input matInput type="text" placeholder="UPI Id" pattern="[a-zA-z0-9]+@[a-zA-z]{3,6}" name="uUpiId"
+                [(ngModel)]="upiObj.upiId" #uUpiId="ngModel" required />
+              <mat-error *ngIf="uUpiId.errors?.['required']">
+                UpiId required*
+              </mat-error>
+              <mat-error *ngIf="uUpiId.errors?.['pattern']">
+                Invalid Upi Id
+              </mat-error>
+            </mat-form-field>
+            <div class="spc-24"></div>
+            <!-- <div>&nbsp;</div> -->
+            <div *ngFor="let h of hotelName" fxLayoutAlign="start space-around">
+              <button mat-raised-button color="warn" style="width: 100%" [disabled]="UpiForm.invalid"
+                (click)="storeUpiDetails(UpiForm.value)">
+                <mat-icon>lock</mat-icon>
+                PAY {{ &nbsp;h.price * h.uguests | currency: 'INR' }}
+              </button>
+            </div>
+          </form>
+        </mat-card>
+      </mat-tab>
+      <mat-tab label="Wallets">
+        <mat-card class="innerCard" *ngIf="pageWalletTab">
+          <img (click)="selectWallet('Phone pe')" style="width: 53px; padding: 6px"
+            src="https://uxwing.com/wp-content/themes/uxwing/download/brands-and-social-media/phonepe-logo-icon.png" />
+          <img (click)="selectWallet('Google Pay')" style="width: 53px; padding: 6px"
+            src="data:image/png;base64,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" />
+          <img (click)="selectWallet('Paytm')" style="width: 53px; padding: 6px"
+            src="https://cdn.icon-icons.com/icons2/730/PNG/512/paytm_icon-icons.com_62778.png" />
+          <div class="spc-24"></div>
+          <form #WalletForm="ngForm">
+            <mat-form-field appearance="outline" style="width: 100%">
+              <mat-label>Wallet</mat-label>
+              <input matInput type="text" name="uphone" placeholder="Enter your Wallet ID" required
+                [(ngModel)]="walletValue" #uPhone="ngModel" />
+            </mat-form-field>
+            <div *ngIf="uPhone.touched && uPhone.invalid">
+              <mat-error *ngIf="uPhone.errors?.['required']">
+                Wallet Id required*
+              </mat-error>
+              <mat-error *ngIf="uPhone.errors?.['pattern']">
+                Enter only numbers
+              </mat-error>
+            </div>
+            <div class="spc-24"></div>
+
+            <div *ngFor="let h of hotelName" fxLayoutAlign="start space-around">
+              <button mat-raised-button color="warn" style="width: 100%" [disabled]="WalletForm.invalid"
+                (click)="storeWalletData1(walletValue);">
+                <mat-icon>lock</mat-icon>
+                Pay {{&nbsp;h.price * h.uguests | currency: 'INR' }}/-
+              </button>
+            </div>
+          </form>
+        </mat-card>
+
+        <div *ngIf="pageWallet">
+          <mat-card class="innerCard">
+            <form #WalletForm="ngForm">
+              <mat-form-field appearance="outline" style="width: 100%">
+                <mat-label>Enter your PhoneNo</mat-label>
+                <input matInput type="tel" name="uphone" placeholder="Enter your phone no" required pattern="^\d{10}$"
+                  maxlength="10" [(ngModel)]="walletObj.wPhone" #uPhone="ngModel" />
+              </mat-form-field>
+              <div *ngIf="uPhone.touched && uPhone.invalid">
+                <mat-error *ngIf="uPhone.errors?.['required']">
+                  Wallet Id required*
+                </mat-error>
+                <mat-error *ngIf="uPhone.errors?.['pattern']">
+                  Enter only numbers
+                </mat-error>
+              </div>
+              <div class="spc-24"></div>
+
+              <div *ngFor="let h of hotelName" fxLayoutAlign="start space-around">
+                <button mat-raised-button color="warn" style="width: 100%" [disabled]="WalletForm.invalid"
+                  (click)="storeWalletData(WalletForm.value)">
+                  <mat-icon>lock</mat-icon>
+                  Pay {{&nbsp;h.price * h.uguests | currency: 'INR' }}/-
+                </button>
+              </div>
+            </form>
+          </mat-card>
+        </div>
+      </mat-tab>
+    </mat-tab-group>
+
+    <div *ngIf="pageProcess">
+      <!-- <mat-card class="innerCard"> -->
+      <section style="
+          background-color: rgb(254, 246, 196);
+          height: 204px;
+          margin: 20px;
+        ">
+        <div>&nbsp;</div>
+        <div>&nbsp;</div>
+
+        <div fxLayout="row" fxLayoutGap="5px">
+          <div fxLayout="column">
+            <div>&nbsp;</div>
+            <mat-spinner color="warn" diameter="40" style="left: 73px; width: 50px; height: 50px; bottom: 20px">
+            </mat-spinner>
+          </div>
+
+          <div>
+            <h5 style="padding-left: 112px">Processing Payment Securely...</h5>
+            <ul class="r-14" style="padding-left: 129px">
+              <li>Do not press the back button or refresh the page</li>
+              <li>Make sure you have stable internet connection</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+      <!-- </mat-card> -->
+    </div>
+    <div *ngIf="pageSucess">
+      <div style="padding: 20px">
+        <section style="background-color: rgb(232, 245, 234); height: 200px">
+          <div>&nbsp;</div>
+          <div fxLayout="row" fxLayoutAlign="start center" fxLayoutGap="5px">
+            <!-- <div fxLayout="column"> -->
+            <mat-icon style="
+                width: 45px;
+                height: 49px;
+                font-size: 44px;
+                color: #367e18;
+                padding: 10px;
+              ">
+              check
+            </mat-icon>
+            <!-- </div> -->
+            <div class="spc-4"></div>
+            <div fxLayout="row">
+              <div fxLayout="column">
+                <p class="m-16-08">Payment successful</p>
+                <p class="r-14">loading the Restaurants website now...</p>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
+
+    <div class="spc-4"></div>
+    <div *ngIf="errorMessage" fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="20px">
+      <mat-icon style="color: red; padding-bottom: 28px">warning</mat-icon>
+      <p fxLayout="column" class="r-16" style="color: red; width: 245px; padding: 0px">
+        Payment failed.Retry using different payment method.Any money deducted
+        will be refunded back
+      </p>
+    </div>
+    <div *ngIf="insufficientBal" fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="20px">
+      <mat-icon style="color: red; padding-bottom: 28px">warning</mat-icon>
+      <p fxLayout="column" class="r-16" style="color: red; width: 245px; padding: 0px">
+        Payment failed.Retry using different payment method or check the balance
+      </p>
+    </div>
+
+    <div class="spc-24"></div>
+  </mat-card>
+</div>

@@ -1,0 +1,48 @@
+[
+  {
+    "hName":"Ohris",
+    "hPrice":"600",
+    "himg":"../../assets/home/ohris.jpg "
+  },
+  {
+    "hName":"Abs",
+    "hPrice":"700",
+    "himg":"../../assets/home/Abs.webp "
+  },
+  {
+    "hName":"Head Quaters",
+    "hPrice":"850",
+    "himg":"../../assets/home/HeadQuaters.webp "
+  }
+  ,
+  {
+    "hName":"Amogham",
+    "hPrice":"1000",
+    "himg":"../../assets/home/Amogham.png"
+  },
+  {
+    "hName":"Exotica",
+    "hPrice":"750",
+    "himg":"../../assets/home/Exotica.webp "
+  },
+  {
+    "hName":"Mehfil",
+    "hPrice":"500",
+    "himg":"../../assets/home/mehfil.png "
+  },
+  {
+    "hName":"BBQ",
+    "hPrice":"1000",
+    "himg":"../../assets/home/bbq.jpg "
+  },
+  {
+    "hName":"Chutneys",
+    "hPrice":"300",
+    "himg":"../../assets/home/chut.jpg "
+  },
+  {
+    "hName":"Cream Stone",
+    "hPrice":"200",
+    "himg":"../../assets/home/cream.jpg "
+  }
+]

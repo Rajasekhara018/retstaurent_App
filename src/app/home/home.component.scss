@@ -1,0 +1,84 @@
+// .img1 {
+//   width: 20%;
+//   height: 20%;
+// }
+@import '../../styles.scss';
+// WebPage/src/styles.scss
+mat-card{
+  width: 369px;
+  height: 550px;
+}
+// .container{
+//   margin: 96px;
+// }
+.container {
+  margin-top: 120px;
+}
+.button{
+  background-color: #EEEEEE;
+  // padding: 50px;
+}
+// .hBg{
+//   // background-image: url(https://static.vecteezy.com/system/resources/thumbnails/000/122/308/small_2x/vector-free-wine-icons.jpg);
+//   height: 357px;
+//   margin-top: -97px;
+//   margin-left: -100px;
+//   margin-right: -100px;
+// }
+// .hSearch{
+
+//   width: 50%;
+//   height: 45px ;
+// }
+.hButton{
+  width: 87px;
+  height: 43px;
+}
+// img{
+//   width:300px;
+//   height: 400px;
+// }
+img{
+  width: 400px;
+    height: 401px;
+}
+
+.notFound{
+  width: 750px;
+  height: 650px;
+
+}
+.searchStyle{
+  width: 500px;
+}
+
+.footer{
+  background-color:#FFF9B0;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  z-index: 2;
+
+}
+
+
+h4{
+  font-size: 32px;
+  font-family: Roboto;
+  font-weight:normal;
+  opacity: 0.87;
+  letter-spacing: 0.24px;
+  line-height: 1.21;
+  }
+  .r-16-06 {
+    font-family: Roboto;
+    font-size: 16px;
+    font-weight: normal;
+    line-height: 1.19;
+    letter-spacing: 0.49px;
+    opacity: 0.77; // the last bits in the class name 06 is the opacity. We have changed the opacity amount in side the class because the background default colour from Angular is black 0.87.
+    // color: rgba(0, 0, 0, 0.6);
+    padding: 0 0 8px 0;
+    margin: 0;
+  }

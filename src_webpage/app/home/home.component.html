@@ -1,0 +1,82 @@
+<div class="container">
+  <div>&nbsp;</div>
+  <section class="hBg" fxLayout="row" fxLayoutAlign="center center">
+    <input
+      style="height: 41px;"
+      type="text"
+      placeholder="Search"
+      [(ngModel)]="searchInput"
+      class="searchStyle"
+      name="searchInput"
+      #home
+    />
+  </section>
+
+  <!-- <c-carousel [interval]="0">
+    <c-carousel-inner> -->
+
+
+  <!-- <div>&nbsp;</div> -->
+
+  <div  fxLayout="row wrap"
+    fxLayoutAlign="center center"
+    *ngIf="restaurant.length > 0" >
+    <!-- <c-carousel-item > -->
+    <div
+    *ngFor="let rdata of restaurant | search: searchInput; index as i"
+      style="margin: 2%;"
+    >
+      <!-- {{i}} -->
+      <div>
+
+        <mat-card (click)="goHomeDetails(rdata.path, rdata)">
+          <img mat-card-image src="{{ rdata.img }}" />
+          <mat-divider></mat-divider>
+          <mat-card-content>
+            <h4>
+             {{ rdata.rname }}
+            </h4>
+            <div class="r-16-06">
+            <p >Type of Cuisine:- {{ rdata.cuisine }}</p>
+            <p>{{ rdata.price }} per person</p>
+            <p>{{ rdata.location }}</p>
+          </div>
+
+          </mat-card-content>
+        </mat-card>
+
+      </div>
+
+    </div>
+  <!-- </c-carousel-item> -->
+  </div>
+
+<!-- </c-carousel-inner>
+<c-carousel-control [routerLink] caption="Previous" direction="prev"></c-carousel-control>
+<c-carousel-control [routerLink] caption="Next" direction="next"></c-carousel-control>
+</c-carousel> -->
+
+  <div
+    fxLayout="row"
+    fxLayoutAlign="center center"
+    *ngIf="hservice.searchPipe.length == 0"
+  >
+
+    <h3>Oops did not find your criteria</h3>
+    <img
+      src="https://img.freepik.com/premium-vector/file-found-illustration-with-confused-people-holding-big-magnifier-search-no-result_258153-336.jpg?w=2000"
+    />
+  </div>
+
+  <mat-toolbar class="footer" fxLayoutAlign="center center" fxLayoutGap="16px">
+    <div fxLayoutAlign="center center">
+      <b>Available In</b>
+    </div>
+    &nbsp;
+    <mat-list role="list" fxLayout="row">
+      <mat-list-item role="listitem" *ngFor="let place of places">
+        <button mat-button>{{ place | uppercase }}</button>
+      </mat-list-item>
+    </mat-list>
+  </mat-toolbar>
+</div>

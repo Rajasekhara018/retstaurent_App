@@ -1,0 +1,142 @@
+<div>
+  &nbsp;
+  <mat-drawer-container>
+    <mat-drawer mode="side" opened>
+ <app-book-register></app-book-register>
+
+
+
+    </mat-drawer>
+    <mat-drawer-content>
+<div fxLayout="row" fxLayoutAlign="center center" style=" margin-top: 120px;">
+  <mat-card class="oICard">
+    <img mat-card-image src="https://b.zmtcdn.com/data/pictures/chains/8/90038/ba0ace0f3ce2794fbd54cc762ea3de8f_o2_featured_v2.jpg?fit=around|750:500&crop=750:500;*,*">
+  <mat-card-title>Barbeque Nation</mat-card-title>
+  <mat-card-subtitle>Rs.2000 for 2|North Indian,Chinese</mat-card-subtitle>
+  <mat-card-subtitle>Banjara hills|Hyderabad</mat-card-subtitle>
+
+  <mat-card-content><b>Time:-</b>(Opens at 7:00pm)</mat-card-content>
+  </mat-card>
+</div>
+<br>
+  <div fxLayout="row" fxLayoutAlign="center center">
+    <mat-card class="oICard">
+      <div>
+
+      <mat-tab-group>
+
+       <mat-tab label="Menu">
+        <img style="width: 866px;" class="eHeight" src="https://d23ynomj6u3eig.cloudfront.net/sites/default/files/2022-08/Artboard%204%20copy_3.jpg">
+       </mat-tab>
+      <mat-tab label="Review">
+        <mat-card>
+          <mat-card-title>Ratings & Reviews</mat-card-title>
+          <mat-card-content>
+            <div>
+            <mat-icon>star</mat-icon>
+            <mat-icon>star</mat-icon>
+            <mat-icon>star</mat-icon>
+            <mat-icon>star</mat-icon>
+            <mat-icon>star</mat-icon>
+            </div>
+
+          </mat-card-content>
+        </mat-card>
+              <h1 fxLayoutAlign="center center" (click)="showReviews()">Reviews</h1>
+              <div>
+                <p *ngIf="userReview">
+                  <mat-icon>person</mat-icon>
+                  {{ reviewData[0] }}
+                </p>
+                <p *ngIf="userReview">
+                  {{ reviewData[1] }}
+                </p>
+                <p *ngIf="userReview">
+                  {{ reviewData[2] }}
+                </p>
+                <!-- {{review}} -->
+                <!-- {{review.ucomment}}</p> -->
+                <p *ngIf="userReview" style="font-size: 33px;">
+                  {{ starData }}
+                  <mat-icon>star</mat-icon>
+                </p>
+              </div>
+
+
+
+
+      </mat-tab>
+      <mat-tab label="About">
+        <!-- <p>Ohri's Jiva is known for its unique texture and unmatched flavour. The pure veg restaurant serves North Indian, Chinese, and Continental cuisines, which you get to savor at cost-effective prices. The exquisite ambiance of the place matches the preferences of people coming from a wide demography. </p> -->
+        <p>
+          Barbeque Nation has brought to India the unique concept of the live grill. This is the best place for all those people who want to try something different from a regular conventional dishes and are bar-be-que lovers with that special deviation for smoked food.</p>
+        <h3 style="color:#CA965C;"> <mat-icon>restaurant_menu</mat-icon><b>Cuisine</b></h3>
+        <p>North Indian,Chinese</p>
+
+          <h3 style="color:#CA965C;"><mat-icon>tapas</mat-icon><b>Type</b></h3>
+          <p>Casual Dining</p>
+          <h3 style="color:#CA965C;"><mat-icon>currency_rupee</mat-icon><b>Average Cost</b></h3>
+          <p>2,000 for two people</p>
+          <h3 style="color:#CA965C;"><mat-icon>trending_up</mat-icon><b>Best Selling</b></h3>
+          <p>
+
+            Paneer Tikka, Chicken Grill, Mutton Curry, Paan Kulfi.
+                 </p>
+      </mat-tab>
+      <mat-tab label="Help">
+        <h1><b>We're always here to help</b></h1>
+        <h3><b>Call us at</b></h3>
+        <p><mat-icon>phone</mat-icon>8987898789</p>
+      </mat-tab>
+
+</mat-tab-group>
+      </div>
+</mat-card>
+  </div>
+<div>&nbsp;</div>
+<div>&nbsp;</div>
+
+  <div fxLayout="row" fxLayoutAlign="center center">
+    <mat-card class="oICard">
+      <mat-card-title ><h4>FAQ</h4></mat-card-title>
+      <mat-accordion>
+        <mat-expansion-panel>
+          <mat-expansion-panel-header>
+            <mat-panel-title class="m-16-06">What cuisines are served at BBQ?</mat-panel-title>
+          </mat-expansion-panel-header>
+          <p class="m-16-06">The main cuisine served at BBQ is Multicuisine.</p>
+        </mat-expansion-panel>
+        <mat-expansion-panel>
+          <mat-expansion-panel-header>
+            <mat-panel-title class="m-16-06"> What is the cost for two at New York BBQ?   </mat-panel-title>
+          </mat-expansion-panel-header>
+          <p class="m-16-06">The cost of two at New York BBQ is ₹900. You can save EXTRA over and above the restaurant deal applied by paying your restaurant bill on the EazyDiner app via PayEazy.</p>
+        </mat-expansion-panel>
+        <mat-expansion-panel>
+          <mat-expansion-panel-header>
+            <mat-panel-title class="m-16-06">Does New York BBQ serve pure vegetarian dishes? </mat-panel-title>
+          </mat-expansion-panel-header>
+          <p class="m-16-06">No, New York BBQ serves both veg and non-veg dishes.</p>
+        </mat-expansion-panel>
+        <mat-expansion-panel>
+          <mat-expansion-panel-header>
+            <mat-panel-title class="m-16-06">What are the operational timings of New York BBQ?
+            </mat-panel-title>
+          </mat-expansion-panel-header>
+          <p class="m-16-06">New York BBQ restaurant operational timing for today: 11:00 AM to 11:00 PM</p>
+        </mat-expansion-panel>
+        <mat-expansion-panel>
+          <mat-expansion-panel-header>
+            <mat-panel-title class="m-16-06">Does New York BBQ serve buffet?  </mat-panel-title>
+          </mat-expansion-panel-header>
+          <p class="m-16-06">No, New York BBQ does not serve buffet.</p>
+        </mat-expansion-panel>
+      </mat-accordion>
+    </mat-card>
+  </div>
+  <!-- </mat-card> -->
+  <!-- </div> -->
+</mat-drawer-content>
+</mat-drawer-container>
+</div>
+
